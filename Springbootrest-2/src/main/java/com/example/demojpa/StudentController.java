@@ -28,4 +28,19 @@ public class StudentController {
 	public Student getStudent(@PathVariable int id) {
 		return studentService.getStudent(id);
 	}
+	
+	@RequestMapping(method = RequestMethod.POST,value="students")
+	public void addStudent(@RequestBody Student student) {
+		studentService.addStudent(student);
+	}
+	
+	@RequestMapping(method = RequestMethod.PUT,value="students/update/{id}")
+	public void updateStudent(@RequestBody Student student,@PathVariable int id) {
+		studentService.updateStudent(id, student);
+	}
+	
+	@RequestMapping("students/display")
+	public List<Student> displayStudents(){
+		return studentService.displayStudents();
+	}
 }

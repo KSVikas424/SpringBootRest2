@@ -26,4 +26,22 @@ public class StudentService {
 		Student student = students.stream().filter(s -> s.getId() == id).findFirst().get();
 		return student;
 	}
+
+	public void addStudent(Student student) {
+		students.add(student);
+	}
+
+	public List<Student> displayStudents() {
+		return students;
+	}
+
+	public void updateStudent(int id, Student obj) {
+		for(int i=0;i<students.size();i++) {
+			if(id == students.get(i).id) {
+				students.set(i, obj);
+				return;
+			}
+		}
+	}
+
 }
