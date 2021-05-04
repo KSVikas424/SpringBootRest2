@@ -43,4 +43,24 @@ public class StudentController {
 	public List<Student> displayStudents(){
 		return studentService.displayStudents();
 	}
+	
+	@RequestMapping("students/delete/{id}")
+	public void deleteStudentByID(@PathVariable int id) {
+		studentService.deleteStudent(id);
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
